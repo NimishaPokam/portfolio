@@ -1,0 +1,47 @@
+- name: Python
+  description: Data analysis, machine learning, and automation
+  link: https://www.python.org/
+  icon: /images/stack/python.png
+  tag: programming
+
+- name: SQL
+  description: Database management
+  link: https://www.mysql.com/
+  icon: /images/stack/sql.png
+  tag: database
+
+- name: Tableau
+  description: Data visualization and dashboards
+  link: https://www.tableau.com/
+  icon: /images/stack/tableau.png
+  tag: visualization
+
+- name: Power BI
+  description: Business intelligence and reporting
+  link: https://powerbi.microsoft.com/
+  icon: /images/stack/powerbi.png
+  tag: visualization
+
+- name: Excel
+  description: Data analysis and reporting
+  link: https://www.microsoft.com/excel
+  icon: /images/stack/excel.png
+  tag: analysis
+
+- name: Git
+  description: Version control and collaboration
+  link: https://git-scm.com/
+  icon: /images/stack/git.png
+  tag: tools
+
+- name: R
+  description: Statistical computing and data visualization
+  link: https://www.r-project.org/
+  icon: /images/stack/r.png
+  tag: programming
+
+- name: SPSS
+  description: Statistical analysis and data management
+  link: https://www.ibm.com/spss
+  icon: /images/stack/spss.png
+  tag: analysis

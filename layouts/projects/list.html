@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="flex flex-1 h-screen relative w-full min-w-0">
+  <section class="w-full h-full md:min-w-[400px] md:w-1/4 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col py-3 overflow-y-auto scroll-area flex-shrink-0">
+    <a href="{{ .Permalink }}">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">{{ .Title }}</h2>
+    </a>
+    <div class="space-y-2.5">
+      {{ range .Pages -}}
+      <a class="article block px-3 py-4 hover:bg-slate-200 dark:hover:bg-slate-700" href="{{ .RelPermalink }}">
+        <h3 class="text-lg font-semibold mb-0.5">{{ .Title }}</h3>
+        <div class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+          {{ .Summary }}
+        </div>
+      </a>
+      {{ end -}}
+    </div>
+  </section>
+
+  <main class="hidden md:grid h-screen place-items-center flex-1">
+    <div class="px-6 py-20 w-full lg:w-[580px] mx-auto prose dark:prose-invert h-fit prose-img:mx-auto">
+      {{ .Content }}
+    </div>
+  </main>
+</div>
+{{ end }}

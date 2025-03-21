@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="flex flex-1 h-screen relative w-full min-w-0">
+  <section class="w-full h-full md:min-w-[400px] md:w-1/4 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex flex-col py-3 overflow-y-auto scroll-area flex-shrink-0">
+    {{$Section := .Site.GetPage "section" .Section }}
+    {{ with $Section }}
+    <a href="{{ .Permalink }}">
+      <h2 class="font-bold mb-5 py-1 pl-12 pr-3 md:px-3">{{ .Title }}</h2>
+    </a>
+    <div class="space-y-2.5">
+      {{ range .Pages -}}
+      {{ $isCurrentPage := eq .RelPermalink $.RelPermalink }}
+      <a class="article block px-3 py-4 {{ if $isCurrentPage }}bg-slate-900 dark:bg-slate-700 text-slate-50{{ else }}hover:bg-slate-200 dark:hover:bg-slate-700{{ end }}" href="{{ .RelPermalink }}">
+        <h3 class="text-lg font-semibold mb-0.5">{{ .Title }}</h3>
+      </a>
+      {{ end -}}
+    </div>
+    {{ end }}
+  </section>
+
+  <article class="overflow-y-auto h-screen w-full">
+    <div class="px-6 py-20 w-full lg:w-[880px] mx-auto prose lg:prose-lg h-fit dark:prose-invert prose-img:mx-auto">
+      <h1 class="!mb-2">{{ .Title }}</h1>
+      {{ with .Date }}<p class="text-sm text-slate-500 !mb-8">{{ .Format "January 2, 2006" }}</p>{{ end }}
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}
